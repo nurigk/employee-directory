@@ -5,10 +5,10 @@ import "./app-style.scss";
 import searchIcon from "../../../dist/asset/searchIcon.png";
 import logo from "../../../dist/asset/kiewitlogo.png";
 import Search from "../Search/Search.js";
-
+import axios from "axios";
 
 const App = () => {
-  const [employeeList, setEmployeeList] = useState(employee_data);
+  const [employeeList, setEmployeeList] = useState([]);
   const [departmentList, setDepartmentList] = useState([
     "Select By Department",
     "Film",
@@ -18,16 +18,25 @@ const App = () => {
 
   const [displaySearchBar, setDisplaySearchBar] = useState(false);
 
-  useEffect(() => {});
+  useEffect(() => {
+    fetchAllEmployeeList();
+  }, []);
 
   const fetchAllEmployeeList = () => {
-    setDepartmentList(employee_data);
-    setDisplaySearchBar(false)
+    axios
+      .get("/employees")
+      .then(({ data }) => {
+        setEmployeeList(data);
+        setDisplaySearchBar(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const handleDepartmentChange = (e) => {
     let dept = e.target.value;
-    if( dept === "Select By Department") {
+    if (dept === "Select By Department") {
       fetchAllEmployeeList();
     }
     e.preventDefault();
@@ -43,7 +52,6 @@ const App = () => {
       });
   };
 
-
   return (
     <>
       <nav className="nav-container">
@@ -52,9 +60,7 @@ const App = () => {
         <button
           className="menu"
           id="view-all"
-          onClick={() => {
-            setEmployeeList(employee_data);
-          }}
+          onClick={fetchAllEmployeeList}
         >
           View all Employees
         </button>
@@ -62,24 +68,33 @@ const App = () => {
         <button
           className="menu"
           onClick={() => {
-            setDisplaySearchBar(displaySearchBar? false : true);
+            setDisplaySearchBar(displaySearchBar ? false : true);
           }}
         >
           Search By Name
         </button>
 
-        <select className="menu" id="dropdown-btn" value="Select By Department" onChange={handleDepartmentChange}>
+        <select
+          className="menu"
+          value="Select By Department"
+          onChange={handleDepartmentChange}
+        >
           {departmentList.map((department) => {
             return (
-                <option className="department-category" value={department}>{department}</option>
+              <option className="department-category" value={department}>
+                {department}
+              </option>
             );
           })}
         </select>
 
-
-        <button type="number" className="menu" onClick={() => {
-            setDisplaySearchBar(displaySearchBar? false : true);
-          }}>
+        <button
+          type="number"
+          className="menu"
+          onClick={() => {
+            setDisplaySearchBar(displaySearchBar ? false : true);
+          }}
+        >
           Filter By Age
         </button>
       </nav>
@@ -103,7 +118,7 @@ const App = () => {
 
           <ul className="employee-list">
             {employeeList.map((employee) => {
-              return <Employee key={employee.name} employee={employee} />;
+              return <Employee key={employee.employeeId} employee={employee} />;
             })}
           </ul>
         </section>

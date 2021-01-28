@@ -23,7 +23,7 @@ const Search = ({setDisplaySearchBar, displaySearchBar, employeeList, setEmploye
     } else {
       let filteredByName = Promise.resolve(
         employeeList.filter((employee) => {
-          let name = employee.name.toLowerCase();
+          let name = employee.employeeName.toLowerCase();
           return name.includes(searchTerm);
         })
       );

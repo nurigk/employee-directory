@@ -9,5 +9,7 @@ body {
   color: $primary-color;
   display: flex;
   flex-direction: column;
+  background-image: url(/client/dist/asset/background.png);
+  background-size: cover;
 }
 

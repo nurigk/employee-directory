@@ -6,7 +6,7 @@ const Employee = ({employee})=> {
 
     return (
       <div className="employee-container">
-          <span><strong>Name</strong>: {employee.name}</span>
+          <span><strong>Name</strong>: {employee.employeeName}</span>
           <span><strong>Department</strong>: {employee.department}</span>
           <span><strong>Age</strong>: {employee.age}</span>
 

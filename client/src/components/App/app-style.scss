@@ -5,7 +5,8 @@
   height: 5em;
   display: flex;
   flex-direction: row;
-  // justify-items: center;
+  filter: opacity(90%);
+  justify-content: space-between;
 }
 
 .menu {
@@ -13,25 +14,13 @@
   border: none;
   text-transform: uppercase;
   background-color: $primary-color;
-  filter: blur(20%);
   color: white;
 }
-
-.menu > div {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
 
 
 .nav-container :hover, .menu :hover {
   color: $secondary-color;
 }
-
 
 #view-all {
   color: $secondary-color;
@@ -51,6 +40,7 @@ main {
   flex-flow: column wrap;
   justify-content: center;
   padding: 1rem;
+  filter: opacity(90%);
 }
 
 .employee-list .employee {
@@ -61,28 +51,4 @@ main {
 }
 
 
-.department-content {
-  visibility: hidden;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
 
-.department-content .department-category {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-
-.nav-container :hover #dropdpwn-btn :hover .department-content {
-  visibility: visible;
-}
-
-#dropdpwn-btn {
-  position: relative;
-  display: inline-block;
-}
