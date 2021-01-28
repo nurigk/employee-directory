@@ -22,6 +22,7 @@ const App = () => {
     fetchAllEmployeeList();
   }, []);
 
+  //get all employees
   const fetchAllEmployeeList = () => {
     axios
       .get("/employees")
@@ -34,6 +35,7 @@ const App = () => {
       });
   };
 
+  //handle department selection from the dropdown menu
   const handleDepartmentChange = (e) => {
     let dept = e.target.value;
     if (dept === "Select By Department") {

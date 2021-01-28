@@ -5,12 +5,12 @@ const port = 5000;
 const path = require("path");
 const bodyParser = require("body-parser");
 const { readAllEmployee, createEmployee } = require("./models/models.js");
-const morgan = require("morgan");
+
 
 app.use(compression())
 app.use("/", express.static(path.join(__dirname, "../client/dist")));
 app.use(bodyParser.json());
-app.use(morgan("dev"));
+
 app.listen(port, () =>
   console.log("Employee-directory app listening on port", port)
 );

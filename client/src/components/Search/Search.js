@@ -5,6 +5,7 @@ const Search = ({setDisplaySearchBar, displaySearchBar, employeeList, setEmploye
   const [searchTerm, setSearchTerm] = useState("");
 
   const filterByName = (searchTerm) => {
+    //determine if the search is for the age filter function
     let integer = Number(searchTerm)
     if (Number.isInteger(integer)) {
       let filteredByAge = Promise.resolve(
@@ -20,6 +21,7 @@ const Search = ({setDisplaySearchBar, displaySearchBar, employeeList, setEmploye
         .catch((err) => {
           console.log(err);
         });
+      //if the search is for the name search function
     } else {
       let filteredByName = Promise.resolve(
         employeeList.filter((employee) => {
