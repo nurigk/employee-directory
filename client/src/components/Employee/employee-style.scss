@@ -1,0 +1,21 @@
+@import "../../index-style.scss";
+
+.employee-container {
+  justify-items: center;
+  background-color: $primary-color;
+  margin: 0.5em;
+  min-height: fit-content;
+  height: 4em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.employee-container > span {
+
+  color: white;
+  font-size: 1em;
+  padding: 1em;
+  align-self: center;
+}

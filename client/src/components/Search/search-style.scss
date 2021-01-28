@@ -1,0 +1,19 @@
+@import "../../index-style.scss";
+
+#search-icon {
+  height: 2em;
+}
+
+.search-bar {
+  margin: 2em;
+  width: 90%;
+}
+
+.search {
+  border: $primary-color 1px;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: center;
+  width: 80%;
+}

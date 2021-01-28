@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App/App.js";
-import './index.scss';
+import './index-style.scss';
 
 
 const mountNode = document.getElementById("app");
