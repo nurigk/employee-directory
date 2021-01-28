@@ -13,7 +13,7 @@ This application was designed to incorporate Kiewit's design aesthetic and creat
 >Users can always go back to viewing all employees by choosing this option.
 
 ### Search by name
->A search bar will pop-up at the bottom of the navigation bar when this option is clicked. Users can type in their queries and the list will only show the names that match users' requests.
+>A search bar will pop up at the bottom of the navigation bar when this option is clicked. Users can type in their queries and the list will only show the names that match users' requests.
 
 ### Select by department
 >Users can select from the dropdown menu and get the filtered result by the department of their choice.
