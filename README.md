@@ -7,6 +7,8 @@ This application was designed to incorporate Kiewit's design aesthetic and creat
 
 ## Application Overview
 
+![Demo](/client/dist/asset/demo.gif "Demo")
+
 ### View all employees
 >Users can always go back to viewing all employees by choosing this option.
 

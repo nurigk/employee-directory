@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import employee_data from "../../employee_data.js";
 import Employee from "../Employee/Employee.js";
 import "./app-style.scss";
-import searchIcon from "../../../dist/asset/searchIcon.png";
 import logo from "../../../dist/asset/kiewitlogo.png";
 import Search from "../Search/Search.js";
 import axios from "axios";
@@ -81,9 +80,9 @@ const App = () => {
           value="Select By Department"
           onChange={handleDepartmentChange}
         >
-          {departmentList.map((department) => {
+          {departmentList.map((department,i) => {
             return (
-              <option className="department-category" value={department}>
+              <option className="department-category" value={department} key ={i}>
                 {department}
               </option>
             );
